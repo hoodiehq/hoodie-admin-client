@@ -1,0 +1,58 @@
+{
+  "name": "@hoodie/admin-client",
+  "description": "Client Admin API for the Hoodie server",
+  "author": "The Hoodie Community and other contributors | http://hood.ie/",
+  "bugs": {
+    "url": "https://github.com/hoodiehq/hoodie-admin-client/issues"
+  },
+  "dependencies": {
+    "@hoodie/account-client": "^3.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "humble-localstorage": "^1.4.2",
+    "istanbul": "^0.4.1",
+    "istanbul-coveralls": "^1.0.3",
+    "lodash": "^4.11.1",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^1.8.0",
+    "rimraf": "^2.4.3",
+    "semantic-release": "^6.2.2",
+    "simple-mock": "^0.7.0",
+    "standard": "^7.0.1",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.4.0",
+    "uglify-js": "^2.6.1",
+    "uglifyify": "^3.0.1"
+  },
+  "homepage": "https://github.com/hoodiehq/hoodie-admin-client#readme",
+  "keywords": [
+    "hoodie",
+    "nobackend",
+    "offlinefirst"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoodiehq/hoodie-admin-client.git"
+  },
+  "scripts": {
+    "build": "npm-run-all -p build:raw:*",
+    "build:dev": "npm-run-all prebuild build:raw:dev",
+    "build:min": "npm-run-all prebuild build:raw:min",
+    "build:raw:dev": "browserify -s HoodieAdmin index.js -o dist/hoodie-admin.js",
+    "build:raw:min": "browserify -s HoodieAdmin -g uglifyify index.js | uglifyjs -c -o dist/hoodie-admin.min.js",
+    "prebuild": "rimraf dist && mkdirp dist",
+    "presemantic-release": "npm run -s build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "pretest": "standard",
+    "test": "npm run -s test:node | tap-spec",
+    "test:coverage": "istanbul cover tape test/{integration,unit}/*-test.js",
+    "test:coverage:upload": "istanbul-coveralls",
+    "test:node": "tape test/{integration,unit}/*-test.js"
+  }
+}
