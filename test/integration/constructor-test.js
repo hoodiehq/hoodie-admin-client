@@ -10,8 +10,9 @@ test('new HoodieAdmin(options)', function (t) {
   simple.mock(global, 'location', {origin: 'http://example.com'})
   var account = new Account()
 
-  t.is(account.username, 'admin', 'sets username from localStorage')
-
-  simple.restore()
-  t.end()
+  account.ready.then(function () {
+    simple.restore()
+    t.is(account.username, 'admin', 'sets username from localStorage')
+    t.end()
+  })
 })
