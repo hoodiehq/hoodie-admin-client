@@ -1,7 +1,7 @@
 /* global location */
 module.exports = HoodieAdmin
 
-var AccountAdmin = require('@hoodie/account-client/admin')
+var AccountAdmin = require('./account')
 
 function HoodieAdmin (options) {
   var url = options && options.url ? options.url : getCurrentOrigin()
