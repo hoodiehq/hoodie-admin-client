@@ -8,7 +8,10 @@
   "dependencies": {
     "@hoodie/account-client": "5.1.1",
     "async-get-set-store": "^1.0.2",
-    "before-after-hook": "^1.0.1"
+    "before-after-hook": "^1.0.1",
+    "lie": "^3.1.1",
+    "lodash": "^4.11.1",
+    "nets": "^3.2.0"
   },
   "devDependencies": {
     "browserify": "^14.1.0",
@@ -16,7 +19,6 @@
     "humble-localstorage": "^1.4.2",
     "istanbul": "^0.4.1",
     "istanbul-coveralls": "^1.0.3",
-    "lodash": "^4.11.1",
     "mkdirp": "^0.5.1",
     "nock": "^9.0.9",
     "npm-run-all": "^4.0.0",
