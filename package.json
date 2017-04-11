@@ -6,7 +6,7 @@
     "url": "https://github.com/hoodiehq/hoodie-admin-client/issues"
   },
   "dependencies": {
-    "@hoodie/account-client": "5.1.1",
+    "@hoodie/account-client": "6.0.1",
     "async-get-set-store": "^1.0.2",
     "before-after-hook": "^1.0.1",
     "lie": "^3.1.1",
