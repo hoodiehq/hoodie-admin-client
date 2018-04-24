@@ -10,7 +10,7 @@
     "async-get-set-store": "^1.0.2",
     "before-after-hook": "^1.0.1",
     "lie": "^3.1.1",
-    "lodash": "^4.11.1",
+    "lodash": "^4.17.9",
     "nets": "^3.2.0"
   },
   "devDependencies": {
